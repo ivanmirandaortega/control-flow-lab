@@ -22,15 +22,23 @@
 
 month = input('Enter the month of the year as three characters:')
 day = int(input('Enter the day of the month:'))
-season = ''
 
-if (month == 'Dec' and day in range(21, 31)) or (month == 'Jan' and day in range(1, 31)) or (month == 'Feb' and day in range(1, 28)) or (month == 'Mar' and day in range(1, 19)):
+if month in ('Jan', 'Feb', 'Mar'):
     season = 'Winter'
-elif (month == 'Mar' and day in range(20, 31)) or (month == 'Apr' and day in range(1, 30) or (month == 'May' and day in range(1, 31)) or (month == 'Jun' and day in range(1, 20))):
+elif month in ('Apr', 'May', 'Jun'):
     season = 'Spring'
-elif (month == 'Jun' and day in range(21, 30) or (month == 'Jul' and day in range(1, 31)) or (month == 'Aug' and day in range(1, 31)) or (month == 'Sep' and day in range(1, 21))):
+elif month in ('Jul', 'Aug', 'Sep'):
     season = 'Summer'
-elif (month == 'Sep' and day in range(22, 30) or (month == 'Oct' and day in range(1, 31)) or (month == 'Nov' and day in range(1, 30)) or (month == 'Dec' and day in range(1, 20))):
+elif month in ('Oct', 'Nov', 'Dec'):
+    season = 'Fall'
+
+if month == 'Dec' and day in range(21, 32):
+    season = 'Winter'
+elif month == 'Mar' and day in range(20, 32):
+    season = 'Spring'
+elif month == 'Jun' and day in range(21, 31):
+    season = 'Summer'
+elif month == 'Sep' and day in range(22, 31):
     season = 'Fall'
 
 print(f'{month} {day} is in {season}')
